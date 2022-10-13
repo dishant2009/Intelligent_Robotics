@@ -1,0 +1,74 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Grass.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/drinks/protos/Can.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.49975734455413146 0.5360250692726443 0.6803820409707033 1.8807588089488978
+  position -0.14474088587680636 -2.000778942091846 6.689009511862204
+  follow "e-puck"
+  followType "Mounted Shot"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 1 0 0
+  floorSize 4 2
+  floorAppearance Grass {
+  }
+}
+Wall {
+  translation -0.0300002 -0.53 0
+  rotation 0 0 1 1.5708
+  name "wall(3)"
+  size 0.1 2.25 0.1
+}
+Wall {
+  translation 0.19 0.52 0
+  rotation 0 0 1 1.5708
+  name "wall(4)"
+  size 0.1 1.65 0.1
+}
+E-puck {
+  translation -1.75 0 0
+  controller "Bug_0"
+  turretSlot [
+    GPS {
+      type "laser"
+    }
+  ]
+  groundSensorsSlot [
+    InertialUnit {
+    }
+  ]
+}
+Wall {
+  translation -0.65 0.2 9.38585e-07
+  rotation 1 0 0 4.692820414042842e-06
+  name "wall(2)"
+  size 0.1 0.75 0.1
+}
+Wall {
+  translation 1.05 -1.10113e-13 2.16041e-11
+  rotation 1 0 0 4.692820414042842e-06
+  name "wall(1)"
+  size 0.1 1.14 0.1
+}
+Wall {
+  translation -1.105 -0.15 -8.91613e-07
+  rotation 1 0 0 4.692820414042842e-06
+  name "wall(5)"
+  size 0.1 0.75 0.1
+}
+Can {
+  translation 0.75 0 0.06
+}
