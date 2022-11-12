@@ -1,0 +1,177 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/plants/protos/PottedTree.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/devices/sharp/protos/SharpGP2Y0A02YK0F.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.39934223719104517 0.49786911791842725 0.7698390214962983 1.6118472873909848
+  position -0.7943199062011825 -3.661215304076284 5.3286249741364955
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 2 2
+  floorAppearance Parquetry {
+  }
+}
+DEF obstacle_2 Solid {
+  translation -0.25 0.2 0.01
+  scale 1.5 1.5 1.5
+  children [
+    DEF circle Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.02
+        radius 0.05
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE circle
+  physics Physics {
+  }
+}
+DEF obstacle_1 Solid {
+  translation -0.5 -0.2 0.01
+  scale 1.5 1.5 1.5
+  children [
+    DEF circle Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.02
+        radius 0.05
+      }
+    }
+  ]
+  boundingObject USE circle
+  physics Physics {
+  }
+}
+DEF obstacle_3 Solid {
+  translation 0.25 -0.2 0.01
+  scale 1.5 1.5 1.5
+  children [
+    DEF circle Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.02
+        radius 0.05
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE circle
+  physics Physics {
+  }
+}
+DEF obstacle_4 Solid {
+  translation 0.5 0.2 0.01
+  scale 1.5 1.5 1.5
+  children [
+    DEF circle Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.02
+        radius 0.05
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject USE circle
+  physics Physics {
+  }
+}
+DEF Goal Solid {
+  translation 0.8 0.3 -0.05
+  scale 0.15 0.15 0.15
+  children [
+    PottedTree {
+      physics Physics {
+      }
+    }
+  ]
+  name "solid(4)"
+  physics Physics {
+  }
+}
+E-puck {
+  translation 0 -0.3 0
+  controller "carrot_chasing"
+  groundSensorsSlot [
+    Compass {
+    }
+    InertialUnit {
+    }
+    GPS {
+    }
+  ]
+}
+E-puck {
+  translation 0.7 -0.3 0
+  name "e-puck(1)"
+  controller "carrot_chasing2"
+  groundSensorsSlot [
+    GPS {
+    }
+    Compass {
+    }
+  ]
+}
+E-puck {
+  hidden translation_1 -5.50183543380703e-08 0.026000000872446128 0.02000006598132129
+  hidden rotation_1 -1.5345212436359805e-06 -0.9999999999867065 -4.9226106912587305e-06 6.252874728606523
+  hidden translation_2 3.461287051263194e-09 -0.02600000050012807 0.020000079716728462
+  hidden rotation_2 -1.471782295215923e-06 0.9999999999868272 4.917245911070696e-06 6.253015236460672
+  translation -0.65 -0.4 0
+  rotation 0 1 0 0
+  name "main(1)"
+  controller "proprotional"
+  distance_sensor_numberOfRays 2
+  turretSlot [
+    Compass {
+    }
+    SharpGP2Y0A02YK0F {
+      translation 0 0 -0.03
+      name "ir0"
+    }
+    SharpGP2Y0A02YK0F {
+      translation 0 0 -0.03
+      rotation 0 0 1 0.7853996938995746
+      name "ir1"
+    }
+    SharpGP2Y0A02YK0F {
+      translation 0 0 -0.03
+      rotation 0 0 1 -0.7853996938995746
+      name "ir2"
+    }
+    InertialUnit {
+    }
+    GPS {
+    }
+  ]
+}
